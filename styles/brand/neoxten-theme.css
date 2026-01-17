@@ -216,6 +216,7 @@ p {
 /* ============================================
    NEOXTEN HEADLINE — Metallic banner style
    Matches the banner's premium silver typography
+   with specular highlight and subtle bloom
    ============================================ */
 
 .neoxtenHeadline {
@@ -225,39 +226,56 @@ p {
   letter-spacing: 0.06em;
   line-height: 1.0;
   
-  /* Metallic silver gradient (matches banner) */
+  /* Metallic silver gradient with top-edge specular highlight */
   background: linear-gradient(
     180deg,
-    #FEFEFE 0%,
-    #E8E8E8 25%,
-    #C8C8C8 50%,
-    #A8A8A8 75%,
-    #989898 100%
+    #FFFFFF 0%,      /* Bright specular top edge */
+    #F8F8F8 8%,      /* Highlight fade */
+    #E0E0E0 20%,     /* Upper chrome */
+    #C0C0C0 45%,     /* Mid chrome */
+    #A0A0A0 70%,     /* Lower chrome */
+    #909090 100%     /* Base shadow */
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   
-  /* Subtle depth — very light shadow for bevel effect */
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  /* Depth shadow + subtle white bloom (specular reflection) */
+  filter: 
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.08));
   
   /* Prevent margin collapse */
   margin: 0;
 }
 
-/* Hero display size */
+/* Hero display size — full specular effect */
 .neoxtenHeadline--display {
   font-size: clamp(40px, 8vw, 80px);
   font-weight: 200;
   letter-spacing: 0.08em;
+  
+  /* Enhanced bloom for hero */
+  filter: 
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 -1px 3px rgba(255, 255, 255, 0.12))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.06));
 }
 
-/* Section title size */
+/* Section title size — subtle specular */
 .neoxtenHeadline--section {
   font-size: clamp(28px, 4vw, 36px);
   font-weight: 300;
   letter-spacing: 0.04em;
   margin-bottom: var(--space-4);
+  
+  /* Lighter effect for sections */
+  filter: 
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.06));
 }
 
 /* Page title size */
@@ -266,6 +284,12 @@ p {
   font-weight: 300;
   letter-spacing: 0.05em;
   margin-bottom: var(--space-5);
+  
+  /* Medium effect for page titles */
+  filter: 
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 8px 22px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.08));
 }
 
 /* ============================================
