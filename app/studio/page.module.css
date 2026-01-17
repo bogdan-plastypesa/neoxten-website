@@ -1,87 +1,75 @@
 /**
- * Studio Page — Brand-compliant styling
- * 
- * Typography from brand-kit:
- * - H1: 48px, weight 300, line-height 1.1
- * - H3: 24px, weight 500, line-height 1.3
- * - Body: 18px, weight 400, line-height 1.6
- * - Overline: 12px, weight 500, letter-spacing 0.1em, uppercase
- * 
- * Gold accent: capability list markers (single focal point)
+ * Studio Page — Using neoxten-theme.css tokens
  */
 
 .page {
-  padding-top: calc(var(--nav-height) + var(--section-py));
+  padding-top: calc(80px + var(--section-py));
   padding-bottom: var(--section-py);
   min-height: 100vh;
 }
 
 .header {
-  margin-bottom: var(--content-gap);
+  margin-bottom: var(--space-8);
 }
 
-/* Overline — Brand typography */
 .overline {
   display: block;
-  font-size: var(--text-overline);
-  font-weight: var(--font-medium);
-  letter-spacing: var(--tracking-wide);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
+  color: var(--gold-mid);
+  margin-bottom: var(--space-3);
 }
 
-/* H1 — Brand typography */
 .title {
-  font-size: var(--text-h1);
-  font-weight: var(--font-light);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-normal);
-  color: var(--color-text-primary);
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 .section {
-  margin-bottom: var(--content-gap);
+  margin-bottom: var(--space-8);
 }
 
 .section:last-child {
   margin-bottom: 0;
 }
 
-/* H3 — Brand typography */
 .sectionTitle {
-  font-size: var(--text-h3);
-  font-weight: var(--font-medium);
-  line-height: var(--leading-relaxed);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-lg);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-5);
 }
 
 .philosophy {
-  font-size: var(--text-body);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-loose);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .capabilities {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
 }
 
 .capabilities li {
-  font-size: var(--text-body);
-  font-weight: var(--font-regular);
-  color: var(--color-text-secondary);
-  padding-left: var(--space-lg);
+  font-size: 18px;
+  color: var(--text-secondary);
+  padding-left: var(--space-5);
   position: relative;
 }
 
-/* Gold accent — capability markers (focal point for this section) */
+/* Gold accent — capability markers */
 .capabilities li::before {
   content: '';
   position: absolute;
@@ -90,16 +78,22 @@
   transform: translateY(-50%);
   width: 8px;
   height: 1px;
-  background-color: var(--color-accent);
+  background-color: var(--gold-primary);
 }
 
 .entity {
-  font-size: var(--text-body);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-loose);
-  color: var(--color-text-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .entity p {
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-top: calc(64px + var(--space-9));
+    padding-bottom: var(--space-9);
+  }
 }

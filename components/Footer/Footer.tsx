@@ -15,7 +15,6 @@ export function Footer() {
         <p className={styles.brand}>NeoXten Studios</p>
 
         <address className={styles.contact}>
-          <p>PLASTYPESA S.R.L.</p>
           <p>
             <a href="mailto:neoxtenstudios@gmail.com">neoxtenstudios@gmail.com</a>
           </p>
@@ -33,7 +32,7 @@ export function Footer() {
         </nav>
 
         <p className={styles.copyright}>
-          © {currentYear} NeoXten Studios
+          © {currentYear} NeoXten Studios — a brand of PLASTYPESA S.R.L.
         </p>
       </div>
     </footer>

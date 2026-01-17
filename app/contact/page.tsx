@@ -12,12 +12,12 @@ export default function Contact() {
     <div className={styles.page}>
       <Container size="narrow">
         <header className={styles.header}>
+          <span className={styles.overline}>Get in Touch</span>
           <h1 className={styles.title}>Contact</h1>
+          <p className={styles.intro}>Direct inquiries welcome.</p>
         </header>
 
         <section className={styles.content} aria-label="Contact information">
-          <p className={styles.intro}>Direct inquiries welcome.</p>
-
           <address className={styles.details}>
             <div className={styles.detailGroup}>
               <span className={styles.label}>Email</span>
@@ -38,9 +38,22 @@ export default function Contact() {
 
             <div className={styles.detailGroup}>
               <span className={styles.label}>Region</span>
-              <span className={styles.value}>UK & EU</span>
+              <span className={styles.value}>UK & EU — Global operation</span>
+            </div>
+
+            <div className={styles.detailGroup}>
+              <span className={styles.label}>Response Time</span>
+              <span className={styles.value}>Within 24–48 hours</span>
             </div>
           </address>
+        </section>
+
+        <div className={styles.divider} />
+
+        <section className={styles.note}>
+          <p>
+            For project inquiries, please include a brief description of your needs and timeline.
+          </p>
         </section>
       </Container>
     </div>

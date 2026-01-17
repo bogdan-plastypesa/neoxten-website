@@ -1,9 +1,6 @@
 /**
- * Navigation — Brand-compliant styling
- * 
- * Gold accent usage (from brand-kit):
- * - Active nav state gets gold underline
- * - This is the single focal point for this component
+ * Navigation — Using neoxten-theme.css tokens
+ * Gold accent on active state only (single focal point)
  */
 
 .header {
@@ -11,14 +8,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: var(--nav-height);
+  height: 80px;
   z-index: 1000;
   transition: background-color var(--duration-normal) var(--ease-out),
               backdrop-filter var(--duration-normal) var(--ease-out);
 }
 
 .header.scrolled {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: rgba(13, 13, 16, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -28,9 +25,9 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: var(--container-wide);
+  max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0 var(--space-xl);
+  padding: 0 var(--space-6);
 }
 
 .logoLink {
@@ -44,43 +41,37 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   NAV LINKS — Brand typography (overline style)
+   NAV LINKS — WEBSITE-SPEC nav-link style
    ═══════════════════════════════════════════════════════════════ */
 
 .navList {
   display: flex;
-  gap: var(--space-xl);
+  gap: var(--space-6);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navLink {
-  font-size: var(--text-overline);
-  font-weight: var(--font-medium);
-  letter-spacing: var(--tracking-wide);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  padding: var(--space-sm) 0;
-  position: relative;
-  transition: color var(--duration-fast) var(--ease-out);
+  color: var(--text-secondary);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid transparent;
+  transition: all var(--duration-normal) var(--ease-out);
 }
 
 .navLink:hover {
-  color: var(--color-text-primary);
+  color: var(--text-primary);
 }
 
-/* Active state — Gold accent (brand focal point) */
+/* Active state — Gold accent (single focal point) */
 .navLink.active {
-  color: var(--color-accent);
-}
-
-.navLink.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--color-accent);
+  color: var(--text-primary);
+  border-bottom-color: var(--gold-primary);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -103,7 +94,7 @@
   display: block;
   width: 20px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  background-color: var(--text-primary);
   position: relative;
   transition: background-color var(--duration-fast) var(--ease-out);
 }
@@ -113,7 +104,7 @@
   position: absolute;
   width: 20px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  background-color: var(--text-primary);
   top: -6px;
   left: 0;
   transition: transform var(--duration-normal) var(--ease-out);
@@ -134,11 +125,11 @@
 .mobileMenu {
   display: none;
   position: fixed;
-  top: var(--nav-height);
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-background);
+  background-color: var(--bg-dark);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--duration-normal) var(--ease-out),
@@ -155,25 +146,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-xl);
+  gap: var(--space-6);
   list-style: none;
-  padding-top: var(--space-4xl);
+  margin: 0;
+  padding: var(--space-9) 0;
 }
 
 .mobileNavLink {
-  font-size: var(--text-h2);
-  font-weight: var(--font-light);
-  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .mobileNavLink:hover {
-  color: var(--color-text-primary);
+  color: var(--text-primary);
 }
 
 /* Mobile active state — Gold accent */
 .mobileNavLink.active {
-  color: var(--color-accent);
+  color: var(--gold-primary);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -196,6 +190,14 @@
 
 @media (max-width: 767px) {
   .nav {
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-4);
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .mobileMenu {
+    top: 64px;
   }
 }

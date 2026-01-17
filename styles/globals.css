@@ -1,164 +1,34 @@
 /**
  * NeoXten Studios — Global Styles
  * 
- * Rules from brand-kit.md:
- * - Deep, dark backgrounds exclusively
- * - Gold accent only for single focal points per section
- * - Generous whitespace, unhurried pacing
- * - No decorative elements
- * - Subtle grain/noise texture on backgrounds
+ * SINGLE SOURCE OF TRUTH: neoxten-theme.css
+ * All tokens, base styles, and components are defined there.
+ * This file only adds Next.js-specific overrides.
  */
 
-@import './tokens.css';
+@import './brand/neoxten-theme.css';
 
 /* ═══════════════════════════════════════════════════════════════
-   RESET
+   NEXT.JS OVERRIDES
    ═══════════════════════════════════════════════════════════════ */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   BODY — Brand-kit compliant background treatment
-   ═══════════════════════════════════════════════════════════════ */
-
-body {
-  font-family: var(--font-primary);
-  font-size: var(--text-body);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-loose);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-secondary);
-  background-color: var(--color-background);
-  min-height: 100vh;
-}
-
-/* Subtle noise texture overlay (from brand-kit.md) */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
-  z-index: 9999;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   TYPOGRAPHY — Brand-kit type scale
-   
-   Rules:
-   - Headlines: Ultra-light to light weights (200–300). Never bold.
-   - Body: Regular weight (400). Let whitespace breathe.
-   - Letter-spacing: Wide for headlines (0.02em), normal for body.
-   - Line length: 65–75 characters maximum.
-   ═══════════════════════════════════════════════════════════════ */
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text-primary);
-  letter-spacing: var(--tracking-normal);
-}
-
-h1 {
-  font-size: var(--text-h1);
-  font-weight: var(--font-light);
-  line-height: var(--leading-snug);
-}
-
-h2 {
-  font-size: var(--text-h2);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-normal);
-}
-
-h3 {
-  font-size: var(--text-h3);
-  font-weight: var(--font-medium);
-  line-height: var(--leading-relaxed);
-}
-
-p {
-  max-width: 70ch; /* 65-75 character line length */
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   LINKS — Token colors only
-   ═══════════════════════════════════════════════════════════════ */
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-a:hover {
-  color: var(--color-text-primary);
-}
-
-a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   SELECTION — Gold accent
-   ═══════════════════════════════════════════════════════════════ */
-
-::selection {
-  background-color: var(--color-accent);
-  color: var(--color-pure-black);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   REDUCED MOTION
-   ═══════════════════════════════════════════════════════════════ */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ACCESSIBILITY
-   ═══════════════════════════════════════════════════════════════ */
-
+/* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-accent);
-  color: var(--color-pure-black);
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-caption);
-  font-weight: var(--font-medium);
+  background: var(--gold-primary);
+  color: var(--bg-deepest);
+  padding: var(--space-2) var(--space-4);
+  font-size: 14px;
+  font-weight: 500;
   z-index: 10000;
   transition: top var(--duration-fast) var(--ease-out);
 }
 
 .skip-link:focus {
-  top: var(--space-md);
+  top: var(--space-4);
 }
 
 .visually-hidden {
@@ -171,4 +41,28 @@ a:focus-visible {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Selection using gold */
+::selection {
+  background-color: var(--gold-primary);
+  color: var(--bg-deepest);
+}
+
+/* Focus ring using gold */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

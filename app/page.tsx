@@ -1,24 +1,175 @@
-import { Logo } from '@/components'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Container } from '@/components'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section — Logo with gold glow (single focal point) */}
+      {/* ═══════════════════════════════════════════════════════════════
+          HERO — Cinematic banner with overlay + text
+          ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.hero} aria-label="Hero">
+        <div className={styles.heroBanner}>
+          <Image
+            src="/brand/hero-banner.png"
+            alt=""
+            fill
+            priority
+            quality={90}
+            className={styles.heroImage}
+          />
+          <div className={styles.heroOverlay} />
+          <div className={styles.heroVignette} />
+        </div>
+
         <div className={styles.heroContent}>
-          <Logo size="hero" glow />
+          <h1 className={styles.heroTitle}>NEOXTEN STUDIOS</h1>
+          <p className={styles.heroTagline}>AI Solutions & Digital Innovation</p>
+          <div className={styles.accentLine} aria-hidden="true" />
+          
+          <div className={styles.heroCtas}>
+            <Link href="/contact" className={styles.btnPrimary}>
+              Contact
+            </Link>
+            <Link href="/work" className={styles.btnSecondary}>
+              View Work
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Statement Section */}
-      <section className={styles.statement} aria-label="Statement">
-        <div className={styles.statementContent}>
-          <h1 className={styles.title}>NeoXten Studios</h1>
-          <p className={styles.description}>
-            An intelligence studio building systems for automation, content, and digital infrastructure.
+      {/* ═══════════════════════════════════════════════════════════════
+          CAPABILITIES — 4 cards with gold accent
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className={styles.section} aria-labelledby="capabilities-heading">
+        <Container>
+          <div className={styles.sectionHeader}>
+            <span className={styles.overline}>What We Do</span>
+            <h2 id="capabilities-heading" className={styles.sectionTitle}>Capabilities</h2>
+          </div>
+
+          <div className={styles.capabilitiesGrid}>
+            <article className={styles.card}>
+              <h3 className={styles.cardTitle}>Automation Systems</h3>
+              <p className={styles.cardText}>
+                End-to-end workflows that eliminate manual processes and scale operations.
+              </p>
+            </article>
+
+            <article className={styles.card}>
+              <h3 className={styles.cardTitle}>AI Integration</h3>
+              <p className={styles.cardText}>
+                Intelligent systems that augment decision-making and content generation.
+              </p>
+            </article>
+
+            <article className={styles.card}>
+              <h3 className={styles.cardTitle}>Content Infrastructure</h3>
+              <p className={styles.cardText}>
+                Publishing pipelines for YouTube, TikTok, and multi-platform distribution.
+              </p>
+            </article>
+
+            <article className={styles.card}>
+              <h3 className={styles.cardTitle}>Digital Operations</h3>
+              <p className={styles.cardText}>
+                Backend systems, data flows, and operational tooling for modern businesses.
+              </p>
+            </article>
+          </div>
+        </Container>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SELECTED WORK — 3 placeholder cards
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className={styles.section} aria-labelledby="work-heading">
+        <Container>
+          <div className={styles.sectionHeader}>
+            <span className={styles.overline}>Portfolio</span>
+            <h2 id="work-heading" className={styles.sectionTitle}>Selected Work</h2>
+          </div>
+
+          <div className={styles.workGrid}>
+            <article className={styles.workCard}>
+              <span className={styles.workTag}>Automation</span>
+              <h3 className={styles.workTitle}>Enterprise Workflow System</h3>
+              <p className={styles.workOutcome}>Reduced manual operations by 80%</p>
+            </article>
+
+            <article className={styles.workCard}>
+              <span className={styles.workTag}>Content</span>
+              <h3 className={styles.workTitle}>Multi-Platform Publishing</h3>
+              <p className={styles.workOutcome}>Unified content pipeline across 5 channels</p>
+            </article>
+
+            <article className={styles.workCard}>
+              <span className={styles.workTag}>AI Integration</span>
+              <h3 className={styles.workTitle}>Intelligent Operations Layer</h3>
+              <p className={styles.workOutcome}>Automated decision support for key processes</p>
+            </article>
+          </div>
+
+          <p className={styles.workNote}>
+            Full portfolio available on request.
           </p>
-        </div>
+        </Container>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PROCESS — 3 steps
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className={styles.section} aria-labelledby="process-heading">
+        <Container>
+          <div className={styles.sectionHeader}>
+            <span className={styles.overline}>How We Work</span>
+            <h2 id="process-heading" className={styles.sectionTitle}>Process</h2>
+          </div>
+
+          <div className={styles.processGrid}>
+            <div className={styles.processStep}>
+              <span className={styles.processNumber}>01</span>
+              <h3 className={styles.processTitle}>Align</h3>
+              <p className={styles.processText}>
+                Define objectives, constraints, and success criteria.
+              </p>
+            </div>
+
+            <div className={styles.processStep}>
+              <span className={styles.processNumber}>02</span>
+              <h3 className={styles.processTitle}>Build</h3>
+              <p className={styles.processText}>
+                Design and implement systems with precision.
+              </p>
+            </div>
+
+            <div className={styles.processStep}>
+              <span className={styles.processNumber}>03</span>
+              <h3 className={styles.processTitle}>Ship</h3>
+              <p className={styles.processText}>
+                Deploy, monitor, and iterate toward outcomes.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          CTA — Final call to action
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className={styles.ctaSection} aria-label="Contact call to action">
+        <Container>
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaTitle}>Ready to build?</h2>
+            <p className={styles.ctaText}>
+              Let&apos;s discuss how we can help transform your operations.
+            </p>
+            <Link href="/contact" className={styles.btnPrimary}>
+              Get in Touch
+            </Link>
+          </div>
+        </Container>
       </section>
     </>
   )

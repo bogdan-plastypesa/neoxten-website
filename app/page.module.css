@@ -1,62 +1,385 @@
 /**
- * Home Page — Brand-compliant styling
- * 
- * Typography from brand-kit:
- * - Display: 72px, weight 200, line-height 1.0, letter-spacing 0.02em
- * - Body: 18px, weight 400, line-height 1.6
+ * Homepage — Cinematic hero + premium sections
+ * Following WEBSITE-SPEC.md exactly
  */
 
+/* ═══════════════════════════════════════════════════════════════
+   HERO — Full viewport with banner background
+   ═══════════════════════════════════════════════════════════════ */
+
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+.heroBanner {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Dark overlay for text readability */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 10, 0.4);
+  z-index: 1;
+}
+
+/* Vignette per WEBSITE-SPEC */
+.heroVignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 50%,
+    transparent 0%,
+    rgba(8, 8, 10, 0.3) 50%,
+    rgba(8, 8, 10, 0.7) 100%
+  );
+  z-index: 2;
 }
 
 .heroContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Statement Section — Brand spacing rhythm */
-.statement {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--section-py) var(--space-lg);
-}
-
-.statementContent {
+  position: relative;
+  z-index: 3;
   text-align: center;
-  max-width: var(--container-narrow);
+  padding: 0 var(--space-5);
+  max-width: var(--container-md);
 }
 
-/* Title — Display typography from brand-kit */
-.title {
-  font-size: var(--text-display);
-  font-weight: var(--font-thin);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-normal);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-xl);
+/* Display headline — uppercase, tracked, thin */
+.heroTitle {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  line-height: 1.0;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
 }
 
-.description {
-  font-size: var(--text-body);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-loose);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-secondary);
-  max-width: 60ch;
+/* Tagline — italic, secondary color */
+.heroTagline {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+/* Gold accent line (single focal point) */
+.accentLine {
+  width: 200px;
+  max-width: 60%;
+  height: 1px;
+  margin: 0 auto var(--space-7);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-muted) 20%,
+    var(--gold-primary) 45%,
+    var(--gold-bright) 50%,
+    var(--gold-primary) 55%,
+    var(--gold-muted) 80%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.accentLine::after {
+  content: '';
+  position: absolute;
+  inset: -8px 20% -8px 20%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(254, 216, 138, 0.25) 0%,
+    transparent 70%
+  );
+  filter: blur(6px);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS — From WEBSITE-SPEC
+   ═══════════════════════════════════════════════════════════════ */
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--gold-muted);
+  color: var(--gold-primary);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btnPrimary:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+  box-shadow: 0 0 20px rgba(254, 216, 138, 0.2);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--bg-highlight);
+  color: var(--text-secondary);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btnSecondary:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTIONS — Common styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.overline {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CAPABILITIES — 4 cards grid
+   ═══════════════════════════════════════════════════════════════ */
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-highlight);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.card:hover {
+  background: var(--bg-elevated);
+  border-color: var(--gold-muted);
+  box-shadow: 0 0 30px rgba(254, 216, 138, 0.08);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.cardText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SELECTED WORK — 3 cards grid
+   ═══════════════════════════════════════════════════════════════ */
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.workCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-highlight);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.workCard:hover {
+  background: var(--bg-elevated);
+  border-color: var(--gold-muted);
+}
+
+.workTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: var(--space-3);
+}
+
+.workTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.workOutcome {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+.workNote {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROCESS — 3 steps
+   ═══════════════════════════════════════════════════════════════ */
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+
+.processStep {
+  text-align: center;
+  padding: var(--space-5);
+}
+
+.processNumber {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--gold-mid);
+  margin-bottom: var(--space-3);
+}
+
+.processTitle {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.processText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.ctaSection {
+  padding: var(--section-py) 0;
+  border-top: 1px solid var(--bg-highlight);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: var(--container-sm);
   margin: 0 auto;
 }
 
+.ctaTitle {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.ctaText {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-6);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
 @media (max-width: 767px) {
-  .statement {
-    padding: var(--section-py) var(--space-md);
+  .hero {
+    min-height: 100svh;
+  }
+
+  .heroImage {
+    object-position: 35% center;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .section {
+    padding: var(--space-9) 0;
   }
 }

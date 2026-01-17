@@ -1,3 +1,7 @@
+/**
+ * Logo — Using neoxten-theme.css tokens
+ */
+
 .logo {
   display: block;
   flex-shrink: 0;
@@ -11,7 +15,9 @@
   object-fit: contain;
 }
 
-/* Gold glow effect — use sparingly (brand-kit: single focal point per section) */
+/* Gold glow effect — use sparingly */
 .glow {
-  filter: drop-shadow(var(--shadow-glow));
+  filter: 
+    drop-shadow(0 0 20px rgba(254, 216, 138, 0.3))
+    drop-shadow(0 0 40px rgba(254, 216, 138, 0.15));
 }

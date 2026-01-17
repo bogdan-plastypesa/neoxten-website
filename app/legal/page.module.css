@@ -1,90 +1,76 @@
 /**
- * Legal Page — Brand-compliant styling
- * 
- * Typography from brand-kit:
- * - H1: 48px, weight 300, line-height 1.1
- * - H2: 32px, weight 400, line-height 1.2
- * - H3 (inline): Body size, weight 500
- * - Body: 18px (using body-sm: 16px for dense legal text)
+ * Legal Page — Using neoxten-theme.css tokens
  */
 
 .page {
-  padding-top: calc(var(--nav-height) + var(--section-py));
+  padding-top: calc(80px + var(--section-py));
   padding-bottom: var(--section-py);
   min-height: 100vh;
 }
 
 .header {
-  margin-bottom: var(--content-gap);
+  margin-bottom: var(--space-8);
 }
 
-/* H1 — Brand typography */
 .title {
-  font-size: var(--text-h1);
-  font-weight: var(--font-light);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-normal);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-lg);
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-5);
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-size: var(--text-body-sm);
+  gap: var(--space-2);
+  font-size: 16px;
 }
 
 .nav a {
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .nav a:hover {
-  color: var(--color-text-primary);
+  color: var(--text-primary);
 }
 
 .separator {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   user-select: none;
 }
 
 .section {
-  margin-bottom: var(--space-4xl);
-  padding-top: var(--space-xl);
+  margin-bottom: var(--space-9);
+  padding-top: var(--space-6);
 }
 
 .section:last-child {
   margin-bottom: 0;
 }
 
-/* H2 — Brand typography */
 .sectionTitle {
-  font-size: var(--text-h2);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-normal);
-  letter-spacing: var(--tracking-normal);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-xl);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--color-border);
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--bg-highlight);
 }
 
 .content {
-  font-size: var(--text-body-sm);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-loose);
-  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
-/* H3 (inline) — Brand typography */
 .content h3 {
-  font-size: var(--text-body);
-  font-weight: var(--font-medium);
-  line-height: var(--leading-relaxed);
-  color: var(--color-text-primary);
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-md);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: var(--space-6) 0 var(--space-3);
 }
 
 .content h3:first-of-type {
@@ -92,7 +78,7 @@
 }
 
 .content p {
-  margin-bottom: var(--space-md);
+  margin: 0 0 var(--space-4);
 }
 
 .content p:last-child {
@@ -100,24 +86,30 @@
 }
 
 .content a {
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .content a:hover {
-  color: var(--color-text-primary);
+  color: var(--text-primary);
 }
 
-/* Caption style for "last updated" */
 .updated {
-  font-size: var(--text-caption);
-  color: var(--color-text-muted);
+  font-size: 14px;
+  color: var(--text-muted);
   font-style: italic;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-6);
 }
 
 .address {
   font-style: normal;
-  line-height: var(--leading-loose);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-top: calc(64px + var(--space-9));
+    padding-bottom: var(--space-9);
+  }
 }
