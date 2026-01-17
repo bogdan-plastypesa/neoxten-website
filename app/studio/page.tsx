@@ -14,7 +14,7 @@ export default function Studio() {
         {/* Header */}
         <header className={styles.header}>
           <span className={styles.overline}>Studio</span>
-          <h1 className={styles.title}>NeoXten Studios</h1>
+          <h1 className="neoxtenHeadline neoxtenHeadline--page">NeoXten Studios</h1>
         </header>
 
         {/* Philosophy */}
@@ -26,7 +26,7 @@ export default function Studio() {
 
         {/* Capabilities */}
         <section className={styles.section} aria-label="Capabilities">
-          <h2 className={styles.sectionTitle}>Capabilities</h2>
+          <h2 className="neoxtenHeadline neoxtenHeadline--section">Capabilities</h2>
           <ul className={styles.capabilities}>
             <li>Automation Systems</li>
             <li>Intelligence Platforms</li>
@@ -37,7 +37,7 @@ export default function Studio() {
 
         {/* Entity */}
         <section className={styles.section} aria-label="Entity">
-          <h2 className={styles.sectionTitle}>Entity</h2>
+          <h2 className="neoxtenHeadline neoxtenHeadline--section">Entity</h2>
           <div className={styles.entity}>
             <p>PLASTYPESA S.R.L.</p>
             <p>Registered in Romania</p>

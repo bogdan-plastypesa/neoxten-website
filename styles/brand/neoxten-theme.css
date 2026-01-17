@@ -214,6 +214,87 @@ p {
 }
 
 /* ============================================
+   NEOXTEN HEADLINE — Metallic banner style
+   Matches the banner's premium silver typography
+   ============================================ */
+
+.neoxtenHeadline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.0;
+  
+  /* Metallic silver gradient (matches banner) */
+  background: linear-gradient(
+    180deg,
+    #FEFEFE 0%,
+    #E8E8E8 25%,
+    #C8C8C8 50%,
+    #A8A8A8 75%,
+    #989898 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Subtle depth — very light shadow for bevel effect */
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  
+  /* Prevent margin collapse */
+  margin: 0;
+}
+
+/* Hero display size */
+.neoxtenHeadline--display {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 200;
+  letter-spacing: 0.08em;
+}
+
+/* Section title size */
+.neoxtenHeadline--section {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+/* Page title size */
+.neoxtenHeadline--page {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-5);
+}
+
+/* ============================================
+   NEOXTEN TAGLINE — Italic subtitle style
+   Matches the banner's "AI Solutions..." line
+   ============================================ */
+
+.neoxtenTagline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Hero size */
+.neoxtenTagline--display {
+  font-size: clamp(18px, 3vw, 24px);
+  margin-bottom: var(--space-6);
+}
+
+/* Page subtitle size */
+.neoxtenTagline--page {
+  font-size: clamp(16px, 2vw, 20px);
+  margin-bottom: var(--space-5);
+}
+
+/* ============================================
    LAYOUT
    ============================================ */
 

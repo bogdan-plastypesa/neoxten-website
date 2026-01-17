@@ -1,23 +1,17 @@
 /**
- * Logo — Using neoxten-theme.css tokens
+ * Logo — Clean transparent mark (no tile/box styling)
  */
 
 .logo {
   display: block;
   flex-shrink: 0;
-  position: relative;
-}
-
-.logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
   object-fit: contain;
+  
+  /* Subtle hover state */
+  transition: opacity var(--duration-normal) var(--ease-out);
 }
 
-/* Gold glow effect — use sparingly */
-.glow {
-  filter: 
-    drop-shadow(0 0 20px rgba(254, 216, 138, 0.3))
-    drop-shadow(0 0 40px rgba(254, 216, 138, 0.15));
+/* Hover applied via parent link */
+a:hover .logo {
+  opacity: 0.85;
 }

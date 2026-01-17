@@ -12,7 +12,7 @@ export default function Legal() {
     <div className={styles.page}>
       <Container size="narrow">
         <header className={styles.header}>
-          <h1 className={styles.title}>Legal</h1>
+          <h1 className="neoxtenHeadline neoxtenHeadline--page">Legal</h1>
           <nav className={styles.nav} aria-label="Legal sections">
             <a href="#privacy">Privacy</a>
             <span className={styles.separator} aria-hidden="true">·</span>
@@ -24,7 +24,7 @@ export default function Legal() {
 
         {/* Privacy Policy */}
         <section id="privacy" className={styles.section} aria-labelledby="privacy-heading">
-          <h2 id="privacy-heading" className={styles.sectionTitle}>Privacy Policy</h2>
+          <h2 id="privacy-heading" className="neoxtenHeadline neoxtenHeadline--section">Privacy Policy</h2>
           <div className={styles.content}>
             <p className={styles.updated}>Last updated: January 2026</p>
             
@@ -67,7 +67,7 @@ export default function Legal() {
 
         {/* Terms of Use */}
         <section id="terms" className={styles.section} aria-labelledby="terms-heading">
-          <h2 id="terms-heading" className={styles.sectionTitle}>Terms of Use</h2>
+          <h2 id="terms-heading" className="neoxtenHeadline neoxtenHeadline--section">Terms of Use</h2>
           <div className={styles.content}>
             <p className={styles.updated}>Last updated: January 2026</p>
 
@@ -110,7 +110,7 @@ export default function Legal() {
 
         {/* Imprint */}
         <section id="imprint" className={styles.section} aria-labelledby="imprint-heading">
-          <h2 id="imprint-heading" className={styles.sectionTitle}>Imprint</h2>
+          <h2 id="imprint-heading" className="neoxtenHeadline neoxtenHeadline--section">Imprint</h2>
           <div className={styles.content}>
             <p>
               Information pursuant to § 5 TMG and EU Regulation on E-Commerce.

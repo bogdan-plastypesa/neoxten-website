@@ -15,7 +15,7 @@ export default function Work() {
         {/* Header */}
         <header className={styles.header}>
           <span className={styles.overline}>Portfolio</span>
-          <h1 className={styles.title}>Selected Work</h1>
+          <h1 className="neoxtenHeadline neoxtenHeadline--page">Selected Work</h1>
           <p className={styles.intro}>
             Systems built for precision, automation, and scale.
           </p>
@@ -91,7 +91,7 @@ export default function Work() {
 
         {/* CTA */}
         <div className={styles.cta}>
-          <h3 className={styles.ctaTitle}>Interested in working together?</h3>
+          <h3 className="neoxtenHeadline neoxtenHeadline--section">Interested in working together?</h3>
           <Link href="/contact" className={styles.btnPrimary}>
             Get in Touch
           </Link>

@@ -13,8 +13,8 @@ export default function Contact() {
       <Container size="narrow">
         <header className={styles.header}>
           <span className={styles.overline}>Get in Touch</span>
-          <h1 className={styles.title}>Contact</h1>
-          <p className={styles.intro}>Direct inquiries welcome.</p>
+          <h1 className="neoxtenHeadline neoxtenHeadline--page">Contact</h1>
+          <p className="neoxtenTagline neoxtenTagline--page">Direct inquiries welcome.</p>
         </header>
 
         <section className={styles.content} aria-label="Contact information">

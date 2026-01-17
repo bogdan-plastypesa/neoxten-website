@@ -9,7 +9,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
-          <Logo size="medium" />
+          <Logo height={48} />
         </div>
 
         <p className={styles.brand}>NeoXten Studios</p>

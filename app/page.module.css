@@ -73,26 +73,7 @@
   max-width: var(--container-md);
 }
 
-/* Display headline — uppercase, tracked, thin */
-.heroTitle {
-  font-size: clamp(40px, 8vw, 80px);
-  font-weight: 200;
-  letter-spacing: 0.06em;
-  line-height: 1.0;
-  color: var(--text-primary);
-  margin-bottom: var(--space-4);
-  text-transform: uppercase;
-}
-
-/* Tagline — italic, secondary color */
-.heroTagline {
-  font-size: clamp(18px, 3vw, 24px);
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-6);
-}
+/* Hero headline and tagline use global .neoxtenHeadline/.neoxtenTagline classes */
 
 /* Gold accent line (single focal point) */
 .accentLine {
@@ -204,13 +185,7 @@
   margin-bottom: var(--space-3);
 }
 
-.sectionTitle {
-  font-size: clamp(28px, 4vw, 36px);
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  color: var(--text-primary);
-  margin: 0;
-}
+/* Section titles use global .neoxtenHeadline--section class */
 
 /* ═══════════════════════════════════════════════════════════════
    CAPABILITIES — 4 cards grid
@@ -359,12 +334,7 @@
   margin: 0 auto;
 }
 
-.ctaTitle {
-  font-size: clamp(28px, 4vw, 36px);
-  font-weight: 300;
-  color: var(--text-primary);
-  margin: 0 0 var(--space-4);
-}
+/* CTA title uses global .neoxtenHeadline--section class */
 
 .ctaText {
   font-size: 18px;

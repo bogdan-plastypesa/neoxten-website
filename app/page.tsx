@@ -26,8 +26,8 @@ export default function Home() {
         </div>
 
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>NEOXTEN STUDIOS</h1>
-          <p className={styles.heroTagline}>AI Solutions & Digital Innovation</p>
+          <h1 className="neoxtenHeadline neoxtenHeadline--display">NEOXTEN STUDIOS</h1>
+          <p className="neoxtenTagline neoxtenTagline--display">AI Solutions & Digital Innovation</p>
           <div className={styles.accentLine} aria-hidden="true" />
           
           <div className={styles.heroCtas}>
@@ -48,7 +48,7 @@ export default function Home() {
         <Container>
           <div className={styles.sectionHeader}>
             <span className={styles.overline}>What We Do</span>
-            <h2 id="capabilities-heading" className={styles.sectionTitle}>Capabilities</h2>
+            <h2 id="capabilities-heading" className="neoxtenHeadline neoxtenHeadline--section">Capabilities</h2>
           </div>
 
           <div className={styles.capabilitiesGrid}>
@@ -90,7 +90,7 @@ export default function Home() {
         <Container>
           <div className={styles.sectionHeader}>
             <span className={styles.overline}>Portfolio</span>
-            <h2 id="work-heading" className={styles.sectionTitle}>Selected Work</h2>
+            <h2 id="work-heading" className="neoxtenHeadline neoxtenHeadline--section">Selected Work</h2>
           </div>
 
           <div className={styles.workGrid}>
@@ -126,7 +126,7 @@ export default function Home() {
         <Container>
           <div className={styles.sectionHeader}>
             <span className={styles.overline}>How We Work</span>
-            <h2 id="process-heading" className={styles.sectionTitle}>Process</h2>
+            <h2 id="process-heading" className="neoxtenHeadline neoxtenHeadline--section">Process</h2>
           </div>
 
           <div className={styles.processGrid}>
@@ -163,7 +163,7 @@ export default function Home() {
       <section className={styles.ctaSection} aria-label="Contact call to action">
         <Container>
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Ready to build?</h2>
+            <h2 className="neoxtenHeadline neoxtenHeadline--section">Ready to build?</h2>
             <p className={styles.ctaText}>
               Let&apos;s discuss how we can help transform your operations.
             </p>
