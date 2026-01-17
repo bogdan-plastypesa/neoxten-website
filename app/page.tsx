@@ -26,7 +26,11 @@ export default function Home() {
         </div>
 
         <div className={styles.heroContent}>
-          <h1 className="neoxtenHeadline neoxtenHeadline--display">NEOXTEN STUDIOS</h1>
+          {/* Two-layer headline with center hotspot */}
+          <div className="neoxtenHeadlineWrap">
+            <h1 className="neoxtenHeadline neoxtenHeadline--display">NEOXTEN STUDIOS</h1>
+            <span className="neoxtenHeadlineHotspot" aria-hidden="true">NEOXTEN STUDIOS</span>
+          </div>
           <p className="neoxtenTagline neoxtenTagline--display">AI Solutions & Digital Innovation</p>
           <div className={styles.accentLine} aria-hidden="true" />
           

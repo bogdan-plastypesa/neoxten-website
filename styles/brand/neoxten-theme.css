@@ -264,6 +264,54 @@ p {
     drop-shadow(0 0 12px rgba(255, 255, 255, 0.06));
 }
 
+/* ============================================
+   HEADLINE HOTSPOT — Center specular bloom
+   Two-layer approach: base + hotspot overlay
+   Matches the banner's center lighting effect
+   ============================================ */
+
+/* Wrapper for the two-layer headline */
+.neoxtenHeadlineWrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hotspot overlay layer — positioned over base text */
+.neoxtenHeadlineHotspot {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  
+  /* Match base headline typography exactly */
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(40px, 8vw, 80px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.0;
+  
+  /* Center radial gradient for hotspot */
+  background: radial-gradient(
+    ellipse 70% 80% at 52% 45%,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.45) 20%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Screen blend for additive lighting */
+  mix-blend-mode: screen;
+  
+  /* Subtle softness */
+  filter: blur(0.4px);
+  
+  /* Tune opacity for subtlety */
+  opacity: 0.32;
+}
+
 /* Section title size — subtle specular */
 .neoxtenHeadline--section {
   font-size: clamp(28px, 4vw, 36px);
