@@ -14,8 +14,11 @@ Official website for NeoXten Studios — an intelligence studio building systems
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (port 3000)
 npm run dev
+
+# Start dev server with clean cache
+npm run dev:clean
 
 # Build for production
 npm run build
@@ -23,6 +26,13 @@ npm run build
 # Start production server
 npm start
 ```
+
+### Windows: EPERM Error
+
+If you see `EPERM: operation not permitted, open '.next\trace'` on Windows:
+
+1. Run `npm run dev:clean` to clear the cache and restart.
+2. If the error persists, move the repo out of `Documents/OneDrive` into a path like `C:\dev\neoxten-website`. Windows security features (Controlled Folder Access) can block `.next` writes in protected locations.
 
 ## Structure
 
@@ -42,8 +52,12 @@ components/
 └── Logo/           # Brand logo mark
 
 styles/
-├── globals.css     # Global styles and reset
-└── tokens.css      # Design tokens
+├── globals.css     # Global styles (imports brand theme)
+└── brand/          # Canonical brand system
+    ├── neoxten-theme.css   # Design tokens & base styles (single source of truth)
+    ├── tokens.json         # Token definitions (JSON)
+    ├── brand-kit.md        # Brand documentation
+    └── WEBSITE-SPEC.md     # Website design spec
 ```
 
 ## Design System

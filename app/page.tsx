@@ -21,6 +21,8 @@ export default function Home() {
           />
           <div className={styles.heroOverlay} />
           <div className={styles.heroVignette} />
+          {/* Masks baked-in text on right side of banner image */}
+          <div className={styles.heroTextMask} aria-hidden="true" />
         </div>
 
         <div className={styles.heroContent}>

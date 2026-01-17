@@ -48,6 +48,23 @@
   z-index: 2;
 }
 
+/* Text mask — hides baked text on right side of hero-banner.png
+   Keeps emblem (left ~35%) visible, completely obscures the baked headline/tagline */
+.heroTextMask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 28%,
+    rgba(8, 8, 10, 0.75) 35%,
+    rgba(8, 8, 10, 0.95) 42%,
+    rgba(8, 8, 10, 1) 48%,
+    rgba(8, 8, 10, 1) 100%
+  );
+  z-index: 2;
+}
+
 .heroContent {
   position: relative;
   z-index: 3;
@@ -366,6 +383,18 @@
 
   .heroImage {
     object-position: 35% center;
+  }
+
+  /* On mobile, mask more aggressively since text would be centered */
+  .heroTextMask {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 25%,
+      rgba(8, 8, 10, 0.8) 40%,
+      rgba(8, 8, 10, 0.95) 60%,
+      rgba(8, 8, 10, 0.98) 100%
+    );
   }
 
   .heroCtas {
