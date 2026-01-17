@@ -1,3 +1,11 @@
+/**
+ * Navigation — Brand-compliant styling
+ * 
+ * Gold accent usage (from brand-kit):
+ * - Active nav state gets gold underline
+ * - This is the single focal point for this component
+ */
+
 .header {
   position: fixed;
   top: 0;
@@ -35,6 +43,10 @@
   opacity: 0.8;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   NAV LINKS — Brand typography (overline style)
+   ═══════════════════════════════════════════════════════════════ */
+
 .navList {
   display: flex;
   gap: var(--space-xl);
@@ -56,8 +68,9 @@
   color: var(--color-text-primary);
 }
 
+/* Active state — Gold accent (brand focal point) */
 .navLink.active {
-  color: var(--color-text-primary);
+  color: var(--color-accent);
 }
 
 .navLink.active::after {
@@ -70,7 +83,10 @@
   background-color: var(--color-accent);
 }
 
-/* Mobile menu button */
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE MENU BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+
 .menuButton {
   display: none;
   width: 44px;
@@ -111,7 +127,10 @@
   transform: translateY(6px) rotate(45deg);
 }
 
-/* Mobile menu overlay */
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE MENU OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+
 .mobileMenu {
   display: none;
   position: fixed;
@@ -148,10 +167,18 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.mobileNavLink:hover,
-.mobileNavLink.active {
+.mobileNavLink:hover {
   color: var(--color-text-primary);
 }
+
+/* Mobile active state — Gold accent */
+.mobileNavLink.active {
+  color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1023px) {
   .navList {

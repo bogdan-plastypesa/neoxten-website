@@ -1,71 +1,46 @@
+import Image from 'next/image'
 import styles from './Logo.module.css'
 
 interface LogoProps {
-  size?: number
+  /** Size in pixels — uses watermark for small, profile for medium, square for large */
+  size?: 'small' | 'medium' | 'large' | 'hero'
   className?: string
+  /** Whether to show the gold glow effect */
+  glow?: boolean
 }
 
-export function Logo({ size = 32, className = '' }: LogoProps) {
+/**
+ * NeoXten Studios Logo
+ * 
+ * Uses actual brand assets from youtube_pack/exports:
+ * - small (32-48px): watermark_150x150.png
+ * - medium (64-120px): profile_800x800.png
+ * - large (120-200px): profile_800x800.png
+ * - hero (200px+): square_1080x1080.png
+ */
+export function Logo({ size = 'small', className = '', glow = false }: LogoProps) {
+  const sizeMap = {
+    small: { width: 32, height: 32, src: '/brand/watermark_150x150.png' },
+    medium: { width: 80, height: 80, src: '/brand/profile_800x800.png' },
+    large: { width: 120, height: 120, src: '/brand/profile_800x800.png' },
+    hero: { width: 200, height: 200, src: '/brand/square_1080x1080.png' },
+  }
+
+  const config = sizeMap[size]
+
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`${styles.logo} ${className}`}
-      aria-label="NeoXten Studios"
-      role="img"
+    <div 
+      className={`${styles.logo} ${glow ? styles.glow : ''} ${className}`}
+      style={{ width: config.width, height: config.height }}
     >
-      {/* Outer orbital ring */}
-      <ellipse
-        cx="50"
-        cy="50"
-        rx="45"
-        ry="20"
-        transform="rotate(-30 50 50)"
-        stroke="url(#chrome-gradient)"
-        strokeWidth="3"
-        fill="none"
+      <Image
+        src={config.src}
+        alt="NeoXten Studios"
+        width={config.width}
+        height={config.height}
+        priority={size === 'hero'}
+        quality={90}
       />
-      {/* Inner orbital ring */}
-      <ellipse
-        cx="50"
-        cy="50"
-        rx="35"
-        ry="15"
-        transform="rotate(30 50 50)"
-        stroke="url(#chrome-gradient)"
-        strokeWidth="2.5"
-        fill="none"
-      />
-      {/* Central play/N mark */}
-      <path
-        d="M35 30 L35 70 L70 50 Z"
-        fill="var(--color-pure-black)"
-        stroke="url(#chrome-gradient)"
-        strokeWidth="2"
-      />
-      {/* Gold accent glow */}
-      <ellipse
-        cx="50"
-        cy="50"
-        rx="45"
-        ry="20"
-        transform="rotate(-30 50 50)"
-        stroke="var(--color-accent)"
-        strokeWidth="1"
-        opacity="0.4"
-        fill="none"
-        className={styles.glow}
-      />
-      <defs>
-        <linearGradient id="chrome-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="var(--color-chrome-highlight)" />
-          <stop offset="50%" stopColor="var(--color-chrome-mid)" />
-          <stop offset="100%" stopColor="var(--color-chrome-shadow)" />
-        </linearGradient>
-      </defs>
-    </svg>
+    </div>
   )
 }

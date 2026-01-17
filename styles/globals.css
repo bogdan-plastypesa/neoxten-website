@@ -1,6 +1,20 @@
+/**
+ * NeoXten Studios — Global Styles
+ * 
+ * Rules from brand-kit.md:
+ * - Deep, dark backgrounds exclusively
+ * - Gold accent only for single focal points per section
+ * - Generous whitespace, unhurried pacing
+ * - No decorative elements
+ * - Subtle grain/noise texture on backgrounds
+ */
+
 @import './tokens.css';
 
-/* Reset */
+/* ═══════════════════════════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════════════════════════ */
+
 *,
 *::before,
 *::after {
@@ -16,17 +30,22 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   BODY — Brand-kit compliant background treatment
+   ═══════════════════════════════════════════════════════════════ */
+
 body {
   font-family: var(--font-primary);
   font-size: var(--text-body);
   font-weight: var(--font-regular);
   line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-tight);
   color: var(--color-text-secondary);
   background-color: var(--color-background);
   min-height: 100vh;
 }
 
-/* Subtle noise texture overlay */
+/* Subtle noise texture overlay (from brand-kit.md) */
 body::before {
   content: '';
   position: fixed;
@@ -41,10 +60,18 @@ body::before {
   z-index: 9999;
 }
 
-/* Typography */
+/* ═══════════════════════════════════════════════════════════════
+   TYPOGRAPHY — Brand-kit type scale
+   
+   Rules:
+   - Headlines: Ultra-light to light weights (200–300). Never bold.
+   - Body: Regular weight (400). Let whitespace breathe.
+   - Letter-spacing: Wide for headlines (0.02em), normal for body.
+   - Line length: 65–75 characters maximum.
+   ═══════════════════════════════════════════════════════════════ */
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
-  font-weight: var(--font-light);
   letter-spacing: var(--tracking-normal);
 }
 
@@ -52,24 +79,27 @@ h1 {
   font-size: var(--text-h1);
   font-weight: var(--font-light);
   line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-normal);
 }
 
 h2 {
   font-size: var(--text-h2);
-  font-weight: var(--font-light);
+  font-weight: var(--font-regular);
   line-height: var(--leading-normal);
 }
 
 h3 {
   font-size: var(--text-h3);
-  font-weight: var(--font-regular);
+  font-weight: var(--font-medium);
   line-height: var(--leading-relaxed);
 }
 
 p {
-  max-width: 70ch;
+  max-width: 70ch; /* 65-75 character line length */
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   LINKS — Token colors only
+   ═══════════════════════════════════════════════════════════════ */
 
 a {
   color: inherit;
@@ -86,13 +116,19 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Selection */
+/* ═══════════════════════════════════════════════════════════════
+   SELECTION — Gold accent
+   ═══════════════════════════════════════════════════════════════ */
+
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-pure-black);
 }
 
-/* Reduced motion */
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════════════════════════ */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -103,7 +139,10 @@ a:focus-visible {
   }
 }
 
-/* Skip link for accessibility */
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════ */
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -122,7 +161,6 @@ a:focus-visible {
   top: var(--space-md);
 }
 
-/* Utility classes */
 .visually-hidden {
   position: absolute;
   width: 1px;

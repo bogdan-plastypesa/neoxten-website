@@ -1,3 +1,11 @@
+/**
+ * Home Page — Brand-compliant styling
+ * 
+ * Typography from brand-kit:
+ * - Display: 72px, weight 200, line-height 1.0, letter-spacing 0.02em
+ * - Body: 18px, weight 400, line-height 1.6
+ */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -13,15 +21,7 @@
   justify-content: center;
 }
 
-.logoWrapper {
-  position: relative;
-}
-
-.heroLogo {
-  filter: drop-shadow(var(--shadow-glow));
-}
-
-/* Statement Section */
+/* Statement Section — Brand spacing rhythm */
 .statement {
   min-height: 50vh;
   display: flex;
@@ -35,28 +35,27 @@
   max-width: var(--container-narrow);
 }
 
+/* Title — Display typography from brand-kit */
 .title {
   font-size: var(--text-display);
   font-weight: var(--font-thin);
-  letter-spacing: 0.04em;
-  color: var(--color-chrome-highlight);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-xl);
 }
 
 .description {
   font-size: var(--text-body);
-  color: var(--color-text-secondary);
+  font-weight: var(--font-regular);
   line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-secondary);
   max-width: 60ch;
   margin: 0 auto;
 }
 
 @media (max-width: 767px) {
-  .heroLogo {
-    width: 140px;
-    height: 140px;
-  }
-
   .statement {
     padding: var(--section-py) var(--space-md);
   }

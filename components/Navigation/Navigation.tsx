@@ -44,7 +44,7 @@ export function Navigation() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.nav} aria-label="Main navigation">
         <Link href="/" className={styles.logoLink} aria-label="NeoXten Studios home">
-          <Logo size={32} />
+          <Logo size="small" />
         </Link>
 
         {/* Desktop Navigation */}

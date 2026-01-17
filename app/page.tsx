@@ -4,12 +4,10 @@ import styles from './page.module.css'
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section — Logo with gold glow (single focal point) */}
       <section className={styles.hero} aria-label="Hero">
         <div className={styles.heroContent}>
-          <div className={styles.logoWrapper}>
-            <Logo size={200} className={styles.heroLogo} />
-          </div>
+          <Logo size="hero" glow />
         </div>
       </section>
 

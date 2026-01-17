@@ -1,3 +1,8 @@
+/**
+ * Footer — Brand-compliant styling
+ * Token colors only. No arbitrary values.
+ */
+
 .footer {
   border-top: 1px solid var(--color-border);
   padding: var(--section-py-sm) 0;

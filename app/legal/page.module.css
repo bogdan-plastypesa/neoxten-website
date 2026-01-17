@@ -1,3 +1,13 @@
+/**
+ * Legal Page — Brand-compliant styling
+ * 
+ * Typography from brand-kit:
+ * - H1: 48px, weight 300, line-height 1.1
+ * - H2: 32px, weight 400, line-height 1.2
+ * - H3 (inline): Body size, weight 500
+ * - Body: 18px (using body-sm: 16px for dense legal text)
+ */
+
 .page {
   padding-top: calc(var(--nav-height) + var(--section-py));
   padding-bottom: var(--section-py);
@@ -8,9 +18,11 @@
   margin-bottom: var(--content-gap);
 }
 
+/* H1 — Brand typography */
 .title {
   font-size: var(--text-h1);
   font-weight: var(--font-light);
+  line-height: var(--leading-snug);
   letter-spacing: var(--tracking-normal);
   color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
@@ -46,9 +58,12 @@
   margin-bottom: 0;
 }
 
+/* H2 — Brand typography */
 .sectionTitle {
   font-size: var(--text-h2);
-  font-weight: var(--font-light);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
   color: var(--color-text-primary);
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-md);
@@ -57,13 +72,16 @@
 
 .content {
   font-size: var(--text-body-sm);
-  color: var(--color-text-secondary);
+  font-weight: var(--font-regular);
   line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
 }
 
+/* H3 (inline) — Brand typography */
 .content h3 {
   font-size: var(--text-body);
   font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
   color: var(--color-text-primary);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
@@ -91,6 +109,7 @@
   color: var(--color-text-primary);
 }
 
+/* Caption style for "last updated" */
 .updated {
   font-size: var(--text-caption);
   color: var(--color-text-muted);
