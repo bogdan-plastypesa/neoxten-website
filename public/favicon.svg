@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer orbital ring -->
+  <ellipse
+    cx="50"
+    cy="50"
+    rx="45"
+    ry="20"
+    transform="rotate(-30 50 50)"
+    stroke="#B0B0B0"
+    stroke-width="4"
+    fill="none"
+  />
+  <!-- Inner orbital ring -->
+  <ellipse
+    cx="50"
+    cy="50"
+    rx="35"
+    ry="15"
+    transform="rotate(30 50 50)"
+    stroke="#B0B0B0"
+    stroke-width="3"
+    fill="none"
+  />
+  <!-- Central play/N mark -->
+  <path
+    d="M35 30 L35 70 L70 50 Z"
+    fill="#0A0A0A"
+    stroke="#F0F0F0"
+    stroke-width="3"
+  />
+</svg>

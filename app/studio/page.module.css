@@ -1,0 +1,82 @@
+.page {
+  padding-top: calc(var(--nav-height) + var(--section-py));
+  padding-bottom: var(--section-py);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: var(--content-gap);
+}
+
+.overline {
+  display: block;
+  font-size: var(--text-overline);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  font-size: var(--text-h1);
+  font-weight: var(--font-light);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+}
+
+.section {
+  margin-bottom: var(--content-gap);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: var(--text-h3);
+  font-weight: var(--font-regular);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.philosophy {
+  font-size: var(--text-body);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+}
+
+.capabilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.capabilities li {
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.capabilities li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.entity {
+  font-size: var(--text-body);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+}
+
+.entity p {
+  margin: 0;
+}

@@ -1,0 +1,30 @@
+.page {
+  padding-top: calc(var(--nav-height) + var(--section-py));
+  padding-bottom: var(--section-py);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: var(--content-gap);
+}
+
+.title {
+  font-size: var(--text-h1);
+  font-weight: var(--font-light);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.statement {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
