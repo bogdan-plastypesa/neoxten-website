@@ -59,14 +59,14 @@ export default function Home() {
             <article className={styles.card}>
               <h3 className={styles.cardTitle}>Automation Systems</h3>
               <p className={styles.cardText}>
-                End-to-end workflows that eliminate manual processes and scale operations.
+                End-to-end workflows that eliminate manual operations and scale reliably.
               </p>
             </article>
 
             <article className={styles.card}>
               <h3 className={styles.cardTitle}>AI Integration</h3>
               <p className={styles.cardText}>
-                Intelligent systems that augment decision-making and content generation.
+                Practical intelligence layers for decision-support and content generation.
               </p>
             </article>
 
@@ -80,7 +80,7 @@ export default function Home() {
             <article className={styles.card}>
               <h3 className={styles.cardTitle}>Digital Operations</h3>
               <p className={styles.cardText}>
-                Backend systems, data flows, and operational tooling for modern businesses.
+                Backend systems, data flows, and tooling for modern businesses.
               </p>
             </article>
           </div>
@@ -101,19 +101,19 @@ export default function Home() {
             <article className={styles.workCard}>
               <span className={styles.workTag}>Automation</span>
               <h3 className={styles.workTitle}>Enterprise Workflow System</h3>
-              <p className={styles.workOutcome}>Reduced manual operations by 80%</p>
+              <p className={styles.workOutcome}>Reduced manual operations by up to 80% through automated routing and orchestration.</p>
             </article>
 
             <article className={styles.workCard}>
               <span className={styles.workTag}>Content</span>
               <h3 className={styles.workTitle}>Multi-Platform Publishing</h3>
-              <p className={styles.workOutcome}>Unified content pipeline across 5 channels</p>
+              <p className={styles.workOutcome}>Unified content pipeline across channels with consistent scheduling and delivery.</p>
             </article>
 
             <article className={styles.workCard}>
               <span className={styles.workTag}>AI Integration</span>
               <h3 className={styles.workTitle}>Intelligent Operations Layer</h3>
-              <p className={styles.workOutcome}>Automated decision support for key processes</p>
+              <p className={styles.workOutcome}>Automated decision support and monitoring for key processes.</p>
             </article>
           </div>
 
@@ -138,7 +138,7 @@ export default function Home() {
               <span className={styles.processNumber}>01</span>
               <h3 className={styles.processTitle}>Align</h3>
               <p className={styles.processText}>
-                Define objectives, constraints, and success criteria.
+                Clarify outcomes, constraints, and success metrics.
               </p>
             </div>
 
@@ -146,7 +146,7 @@ export default function Home() {
               <span className={styles.processNumber}>02</span>
               <h3 className={styles.processTitle}>Build</h3>
               <p className={styles.processText}>
-                Design and implement systems with precision.
+                Implement systems with reliability and clean interfaces.
               </p>
             </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
               <span className={styles.processNumber}>03</span>
               <h3 className={styles.processTitle}>Ship</h3>
               <p className={styles.processText}>
-                Deploy, monitor, and iterate toward outcomes.
+                Deploy, monitor, iterate.
               </p>
             </div>
           </div>

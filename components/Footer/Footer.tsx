@@ -24,11 +24,11 @@ export function Footer() {
         </address>
 
         <nav className={styles.legal} aria-label="Legal navigation">
-          <Link href="/legal#privacy">Privacy</Link>
+          <Link href="/privacy">Privacy</Link>
           <span className={styles.separator} aria-hidden="true">·</span>
-          <Link href="/legal#terms">Terms</Link>
+          <Link href="/terms">Terms</Link>
           <span className={styles.separator} aria-hidden="true">·</span>
-          <Link href="/legal#imprint">Imprint</Link>
+          <Link href="/cookies">Cookies</Link>
         </nav>
 
         <p className={styles.copyright}>
